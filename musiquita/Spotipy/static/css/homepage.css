@@ -1,0 +1,6 @@
+.bg-img {
+    height: 80vh;
+    width: 80vw;
+    object-fit: cover;
+    filter: brightness(0.6)
+}
