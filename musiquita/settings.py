@@ -120,6 +120,13 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+if not DEBUG:
+    STATIC_ROOT = '/home/Users/ozzyflores/Documents/PythonProject/musiquita/musiquita/Spotipy/static/css/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/'),
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
