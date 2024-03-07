@@ -1,16 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+<style>
+  body{
+    color:black;
+  }
+  </style>
+<div class="container">
     <h1>Song Names</h1>
     <ul>
         {% for song in song_names %}
-            <li>{{ song }}</li>
+            <li>
+                {% if song.album_cover_url %}
+                    <img src="{{ song.album_cover_url }}" alt="Album Cover" style="width: 100px; height: 100px; margin-right: 10px;">
+                {% endif %}
+                {{ song.name }}
+            </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+</div>
+{% endblock %}
